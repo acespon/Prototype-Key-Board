@@ -36,44 +36,57 @@ points:
             reverse: true
   zones:
     matrix: # of keys
+      anchor:
+        shift: [100, -100] # Fix KiCad placement
+      # Use the pins closer to the keys for the rows, and the pins farther from the keys for the columns
       columns: 
         outer:
-          rows.mod.skip: true
-        pinky:
-          rows.mod.skip: true
+          key:
+            column_net: C0
+        pinky: 
+          key:
+            column_net: C1
         ring:
           key:
             stagger: 5
+            column_net: C2
         middle:
           key:
             stagger: 10
+            column_net: C3
         index:
           key:
             stagger: -5
+            column_net: C4
         indexfar:
           key:
             stagger: -2.5
-          rows.mod.skip: true
+            column_net: C5
       rows:
-        mod:
         bottom:
+          row_net: R2
         home:
+          row_net: R1
         top:
+          row_net: R0
     thumbs:
-
       columns:
         layer:
           key:
             splay: -15
-
+            column_net: C0
         space:
-          key.splay: -15
-          key.shift: [2,-2]
+          key:
+            splay: -15
+            shift: [2,-2]
+            column_net: C1
       anchor:
         ref: matrix_indexfar_bottom
         shift: [2,-ky - 3]
       rows:
         cluster:
+          row_net: R3
+
 outlines:
   raw:
     - what: rectangle
