@@ -1,0 +1,98 @@
+meta: 
+  engine: 4.1.0
+
+units:
+  $default_width: 18
+  $default_height: 17
+  kx: cx
+  ky: cy
+
+  px: kx + 4
+  py: ky + 4
+
+points:
+  key:
+    padding: ky
+    spread: 1kx
+    footprints:
+      choc_hotswap:
+        type: choc
+        nets:
+          from: =column_net
+          to: GND
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+        choc:
+          type: choc
+          anchor:
+            rotate: 180
+          nets:
+            from: =column_net
+            to: GND
+          params:
+            keycaps: true
+            reverse: true
+  zones:
+    matrix: # of keys
+      columns: 
+        outer:
+          rows.mod.skip: true
+        pinky:
+          rows.mod.skip: true
+        ring:
+          key:
+            stagger: 5
+        middle:
+          key:
+            stagger: 10
+        index:
+          key:
+            stagger: -5
+        indexfar:
+          key:
+            stagger: -2.5
+          rows.mod.skip: true
+      rows:
+        mod:
+        bottom:
+        home:
+        top:
+    thumbs:
+
+      columns:
+        layer:
+          key:
+            splay: -15
+
+        space:
+          key.splay: -15
+          key.shift: [2,-2]
+      anchor:
+        ref: matrix_indexfar_bottom
+        shift: [2,-ky - 3]
+      rows:
+        cluster:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5, ky-0.5]
+  combo:
+    - what: outline
+      name: raw
+      expand: 1)
+    - what: outline
+      name: keys
+      operation: subtract
+
+
+
+
+
+
