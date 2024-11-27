@@ -72,23 +72,14 @@ points:
           row_net: R3
 
 outlines:
-  raw:
+  _raw:
     - what: rectangle
       where: true
       size: [px, py]
-  #      expand: 0.5>
-  keys:
+  _keys:
     - what: rectangle
       where: true
       size: [kx-0.5, ky-0.5]
-
-  combo:
-    - what: outline
-      name: raw
-      expand: 1)
-    - what: outline
-      name: keys
-      operation: subtract
 
   baseplate:
     - what: rectangle
@@ -119,11 +110,15 @@ outlines:
         shift: [1 +kx, 10.2]
       operation: subtract
     - what: outline
-      name: raw
+      name: _raw
       operation: add
       expand: 1)
+
+  combo:
     - what: outline
-      name: keys
+      name: baseplate
+    - what: outline
+      name: _keys
       operation: subtract
 
 pcbs:
@@ -199,4 +194,22 @@ pcbs:
           reversible: true
         adjust:
             rotate: -90
-            shift: [ 8, kx]
+            shift: [ 8, 13]
+
+      power_switch:
+        what: ceoloide/power_switch_smd_side
+        where: thumbs_space_cluster
+        params:
+          reversible: true
+        adjust:
+            rotate: 0
+            shift: [ 9, 5 + kx]
+
+      reset_button:
+        what: ceoloide/reset_switch_tht_top
+        where: matrix_index_bottom
+        params:
+          reversible: true
+        adjust:
+            rotate: 0
+            shift: [ 39, 0]
