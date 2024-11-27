@@ -76,7 +76,7 @@ outlines:
     - what: rectangle
       where: true
       size: [px, py]
-      expand: 1)
+  #      expand: 0.5>
   keys:
     - what: rectangle
       where: true
@@ -95,21 +95,36 @@ outlines:
       where: matrix_indexfar_bottom
       size: [3 kx, 3 kx]
       adjust:
-        shift: [5, 17.5]
+        shift: [5, 16.5]
     - what: rectangle
       where: matrix_indexfar_bottom
-      size: [6 kx, 3 kx]
+      size: [6 kx, 2 kx]
       adjust:
-        shift: [-kx-4, 9]
+        shift: [-kx-4, 1]
+      operation: add
+    - what: rectangle
+      where: thumbs_layer_cluster
+      size: [3px,px]
+      adjust:
+        shift: [-2-kx,0.5]
     - what: rectangle
       where: thumbs_space_cluster
       size: [1kx, 2.3 kx]
       adjust:
-        shift: [6, 10.2]
+        shift: [6, 11.2]
+    - what: rectangle
+      where: thumbs_space_cluster
+      size: [1kx, 4 kx]
+      adjust:
+        shift: [1 +kx, 10.2]
+      operation: subtract
     - what: outline
       name: raw
       operation: add
       expand: 1)
+    - what: outline
+      name: keys
+      operation: subtract
 
 pcbs:
   tutorial:
@@ -118,8 +133,6 @@ pcbs:
       main:
         outline: baseplate
     footprints:
-
-
 
       key_switches:
         what: ceoloide/switch_choc_v1_v2
@@ -132,7 +145,7 @@ pcbs:
           # The following parameters are specific to choc_v1_v2
           outer_pad_width_front: 1.6
           outer_pad_width_back: 1.6
-          choc_v2_support: false
+          choc_v2_support: true
           choc_v1_support: false
         adjust:
           rotate: 0
@@ -177,4 +190,13 @@ pcbs:
           use_rectangular_jumpers: true
           only_required_jumpers: true
         adjust:
-          shift: [ 40, 0.375 kp -18.37 ]
+          shift: [ 39, 0.375 kp -13.37 ]
+
+      battery_jack:
+        what: ceoloide/battery_connector_jst_ph_2
+        where: thumbs_space_cluster
+        params:
+          reversible: true
+        adjust:
+            rotate: -90
+            shift: [ 8, kx]
