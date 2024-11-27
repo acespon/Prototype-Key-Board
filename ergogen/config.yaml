@@ -1,4 +1,4 @@
-meta: 
+meta:
   engine: 4.1.0
 
 units:
@@ -6,44 +6,27 @@ units:
   $default_height: 17
   kx: cx
   ky: cy
+  kp: 2
+  ks: 2
 
-  px: kx + 4
-  py: ky + 4
+  px: kx + 2
+  py: ky + 2
 
 points:
   key:
     padding: ky
     spread: 1kx
-    footprints:
-      choc_hotswap:
-        type: choc
-        nets:
-          from: =column_net
-          to: GND
-        params:
-          keycaps: true
-          reverse: true
-          hotswap: true
-        choc:
-          type: choc
-          anchor:
-            rotate: 180
-          nets:
-            from: =column_net
-            to: GND
-          params:
-            keycaps: true
-            reverse: true
+    tags: key
   zones:
     matrix: # of keys
       anchor:
         shift: [100, -100] # Fix KiCad placement
       # Use the pins closer to the keys for the rows, and the pins farther from the keys for the columns
-      columns: 
+      columns:
         outer:
           key:
             column_net: C0
-        pinky: 
+        pinky:
           key:
             column_net: C1
         ring:
@@ -74,14 +57,15 @@ points:
         layer:
           key:
             splay: -15
-            column_net: C0
+            column_net: C4
         space:
           key:
             splay: -15
-            shift: [2,-2]
-            column_net: C1
+            shift: [3,-2]
+            column_net: C5
+
       anchor:
-        ref: matrix_indexfar_bottom
+        ref: matrix_index_bottom
         shift: [2,-ky - 3]
       rows:
         cluster:
@@ -92,10 +76,12 @@ outlines:
     - what: rectangle
       where: true
       size: [px, py]
+      expand: 1)
   keys:
     - what: rectangle
       where: true
       size: [kx-0.5, ky-0.5]
+
   combo:
     - what: outline
       name: raw
@@ -104,8 +90,91 @@ outlines:
       name: keys
       operation: subtract
 
+  baseplate:
+    - what: rectangle
+      where: matrix_indexfar_bottom
+      size: [3 kx, 3 kx]
+      adjust:
+        shift: [5, 17.5]
+    - what: rectangle
+      where: matrix_indexfar_bottom
+      size: [6 kx, 3 kx]
+      adjust:
+        shift: [-kx-4, 9]
+    - what: rectangle
+      where: thumbs_space_cluster
+      size: [1kx, 2.3 kx]
+      adjust:
+        shift: [6, 10.2]
+    - what: outline
+      name: raw
+      operation: add
+      expand: 1)
+
+pcbs:
+  tutorial:
+    template: kicad8
+    outlines:
+      main:
+        outline: baseplate
+    footprints:
 
 
 
+      key_switches:
+        what: ceoloide/switch_choc_v1_v2
+        where: /key/
+        params:
+          reversible: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          # The following parameters are specific to choc_v1_v2
+          outer_pad_width_front: 1.6
+          outer_pad_width_back: 1.6
+          choc_v2_support: false
+          choc_v1_support: false
+        adjust:
+          rotate: 0
 
+      diodes:
+        what: ceoloide/diode_tht_sod123
+        where: /key/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          include_tht: false
+          reversible: true
+          side: F
+        adjust:
+          shift: [0, -5]
+          rotate: 180
 
+      mcu:
+        what: ceoloide/mcu_nice_nano
+        where: matrix_index_top
+        params:
+          P0: DAT
+          P1: LED
+          P21: C0
+          P20: C1
+          P19: C2
+          P18: C3
+          P15: C4
+          P14: C5
+          P2: SDA
+          P3: SCL
+          P4: CS
+          P5: R0
+          P6: R1
+          P7: R2
+          P8: R3
+          reversible: true
+          include_traces: true
+          show_silk_labels: true
+          show_via_labels: true
+          show_instructions: false
+          use_rectangular_jumpers: true
+          only_required_jumpers: true
+        adjust:
+          shift: [ 40, 0.375 kp -18.37 ]
