@@ -2,15 +2,8 @@ meta:
   engine: 4.1.0
 
 units:
-  $default_width: 18
-  $default_height: 17
-  kx: cx
-  ky: cy
-  kp: 2
-  ks: 2
-
-  px: kx + 2
-  py: ky + 2
+  kx: u
+  ky: u
 
 points:
   key:
@@ -63,19 +56,24 @@ points:
             splay: -15
             shift: [3,-2]
             column_net: C5
-
       anchor:
         ref: matrix_index_bottom
         shift: [2,-ky - 3]
       rows:
         cluster:
           row_net: R3
+    mcu:
+      key.tags:
+        - helper
+      anchor:
+        - ref: matrix_indexfar_top
+          shift: [u/2+18/2+1.6,u/2-33/2]
 
 outlines:
   _raw:
     - what: rectangle
       where: true
-      size: [px, py]
+      size: [kx, kx]
   _keys:
     - what: rectangle
       where: true
@@ -86,28 +84,28 @@ outlines:
       where: matrix_indexfar_bottom
       size: [3 kx, 3 kx]
       adjust:
-        shift: [5, 16.5]
-    - what: rectangle
-      where: matrix_indexfar_bottom
-      size: [6 kx, 2 kx]
-      adjust:
-        shift: [-kx-4, 1]
-      operation: add
+        shift: [1.1, 19]
+        # - what: rectangle
+        #  where: matrix_indexfar_bottom
+        # size: [6 kx, 2 kx]
+        #adjust:
+        # shift: [-2kx, 2]
+    # operation: add
     - what: rectangle
       where: thumbs_layer_cluster
-      size: [3px,px]
+      size: [3.5kx,2kx]
       adjust:
-        shift: [-2-kx,0.5]
+        shift: [-2-kx, 0.5 kx - 0.6]
     - what: rectangle
       where: thumbs_space_cluster
-      size: [1kx, 2.3 kx]
+      size: [2kx, 2.3 kx]
       adjust:
-        shift: [6, 11.2]
+        shift: [0, 12.4]
     - what: rectangle
       where: thumbs_space_cluster
       size: [1kx, 4 kx]
       adjust:
-        shift: [1 +kx, 10.2]
+        shift: [kx, 9]
       operation: subtract
     - what: outline
       name: _raw
@@ -138,7 +136,7 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
           # The following parameters are specific to choc_v1_v2
-          outer_pad_width_front: 1.6
+          outer_pad_width_front: 2.0
           outer_pad_width_back: 1.6
           choc_v2_support: true
           choc_v1_support: false
@@ -160,19 +158,14 @@ pcbs:
 
       mcu:
         what: ceoloide/mcu_nice_nano
-        where: matrix_index_top
+        where: mcu
         params:
-          P0: DAT
-          P1: LED
           P21: C0
           P20: C1
           P19: C2
           P18: C3
           P15: C4
           P14: C5
-          P2: SDA
-          P3: SCL
-          P4: CS
           P5: R0
           P6: R1
           P7: R2
@@ -185,7 +178,7 @@ pcbs:
           use_rectangular_jumpers: true
           only_required_jumpers: true
         adjust:
-          shift: [ 39, 0.375 kp -13.37 ]
+          shift: [0,0]
 
       battery_jack:
         what: ceoloide/battery_connector_jst_ph_2
@@ -193,8 +186,8 @@ pcbs:
         params:
           reversible: true
         adjust:
-            rotate: -90
-            shift: [ 8, 13]
+          rotate: 90
+          shift: [ -5, 13]
 
       power_switch:
         what: ceoloide/power_switch_smd_side
@@ -202,14 +195,14 @@ pcbs:
         params:
           reversible: true
         adjust:
-            rotate: 0
-            shift: [ 9, 5 + kx]
+          rotate: 0
+          shift: [ 9, 5 + kx]
 
       reset_button:
         what: ceoloide/reset_switch_tht_top
-        where: matrix_index_bottom
+        where: mcu
         params:
           reversible: true
         adjust:
-            rotate: 0
-            shift: [ 39, 0]
+          rotate: 0
+          sdhift: [ 0, -22]
