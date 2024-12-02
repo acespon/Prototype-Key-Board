@@ -92,21 +92,6 @@ points:
       rows:
         top:
         bottom:
-    screw_bottomright:
-      key.tags:
-        - helper
-        - screw
-      anchor:
-        - ref: thumbs_space_cluster
-          shift: [ 0.25 kx + 3, -0.25 kx - 3]
-    screws_middle:
-      key.tags:
-        - helper
-        - screw
-      key.padding: kx
-      anchor:
-        - ref: matrix_ring_bottom
-          shift: [ 0.5 kx,  0.5kx ]
 
 outlines:
   _raw:
@@ -169,6 +154,7 @@ pcbs:
           from: "{{column_net}}"
           to: "{{colrow}}"
           # The following parameters are specific to choc_v1_v2
+          include_traces_vias: true
           outer_pad_width_front: 2.0
           outer_pad_width_back: 2.0
           choc_v2_support: true
@@ -211,7 +197,7 @@ pcbs:
           use_rectangular_jumpers: true
           only_required_jumpers: true
         adjust:
-          shift: [ 0,0 ]
+          shift: [ 0, 1 ]
 
       battery_jack:
         what: ceoloide/battery_connector_jst_ph_2
@@ -239,7 +225,6 @@ pcbs:
         adjust:
           rotate: 0
           shift: [ 0, -19 ]
-
 
       screws:
         what: ceoloide/mounting_hole_npth
