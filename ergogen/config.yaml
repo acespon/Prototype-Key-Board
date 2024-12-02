@@ -13,7 +13,7 @@ points:
   zones:
     matrix: # of keys
       anchor:
-        shift: [100, -100] # Fix KiCad placement
+        shift: [ 100, -100 ] # Fix KiCad placement
       # Use the pins closer to the keys for the rows, and the pins farther from the keys for the columns
       columns:
         outer:
@@ -54,11 +54,11 @@ points:
         space:
           key:
             splay: -15
-            shift: [3,-2]
+            shift: [ 3,-2 ]
             column_net: C5
       anchor:
         ref: matrix_index_bottom
-        shift: [2,-ky - 3]
+        shift: [ 2,-ky - 3 ]
       rows:
         cluster:
           row_net: R3
@@ -67,45 +67,39 @@ points:
         - helper
       anchor:
         - ref: matrix_indexfar_top
-          shift: [u/2+18/2+1.6,u/2-33/2]
+          shift: [ u/2+18/2+1.6,u/2-33/2 ]
 
 outlines:
   _raw:
     - what: rectangle
       where: true
-      size: [kx, kx]
+      size: [ kx, kx ]
   _keys:
     - what: rectangle
       where: true
-      size: [kx-0.5, ky-0.5]
+      size: [ kx-0.5, ky-0.5 ]
 
   baseplate:
     - what: rectangle
       where: matrix_indexfar_bottom
-      size: [3 kx, 3 kx]
+      size: [ 3 kx, 3 kx ]
       adjust:
-        shift: [1.1, 19]
-        # - what: rectangle
-        #  where: matrix_indexfar_bottom
-        # size: [6 kx, 2 kx]
-        #adjust:
-        # shift: [-2kx, 2]
-    # operation: add
+        shift: [ 1.1, 19 ]
     - what: rectangle
       where: thumbs_layer_cluster
-      size: [3.5kx,2kx]
+      size: [ 3.5kx,2kx ]
       adjust:
-        shift: [-2-kx, 0.5 kx - 0.6]
+        shift: [ -2-kx, 0.5 kx - 0.6 ]
     - what: rectangle
       where: thumbs_space_cluster
-      size: [2kx, 2.3 kx]
+      size: [ 2kx, 2.3 kx ]
       adjust:
-        shift: [0, 12.4]
+        shift: [ 0, 12.4 ]
     - what: rectangle
       where: thumbs_space_cluster
-      size: [1kx, 4 kx]
+      size: [ 1kx, 4 kx ]
       adjust:
-        shift: [kx, 9]
+        shift: [ kx, 9 ]
       operation: subtract
     - what: outline
       name: _raw
@@ -137,7 +131,7 @@ pcbs:
           to: "{{colrow}}"
           # The following parameters are specific to choc_v1_v2
           outer_pad_width_front: 2.0
-          outer_pad_width_back: 1.6
+          outer_pad_width_back: 2.0
           choc_v2_support: true
           choc_v1_support: false
         adjust:
@@ -153,7 +147,7 @@ pcbs:
           reversible: true
           side: F
         adjust:
-          shift: [0, -5]
+          shift: [ 0, -5 ]
           rotate: 180
 
       mcu:
@@ -178,7 +172,7 @@ pcbs:
           use_rectangular_jumpers: true
           only_required_jumpers: true
         adjust:
-          shift: [0,0]
+          shift: [ 0,0 ]
 
       battery_jack:
         what: ceoloide/battery_connector_jst_ph_2
@@ -187,7 +181,7 @@ pcbs:
           reversible: true
         adjust:
           rotate: 90
-          shift: [ -5, 13]
+          shift: [ -5, 13 ]
 
       power_switch:
         what: ceoloide/power_switch_smd_side
@@ -196,7 +190,7 @@ pcbs:
           reversible: true
         adjust:
           rotate: 0
-          shift: [ 9, 5 + kx]
+          shift: [ 9, 1.5 kx ]
 
       reset_button:
         what: ceoloide/reset_switch_tht_top
@@ -205,4 +199,4 @@ pcbs:
           reversible: true
         adjust:
           rotate: 0
-          sdhift: [ 0, -22]
+          shift: [ 0, -22 ]
