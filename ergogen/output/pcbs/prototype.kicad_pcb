@@ -10,7 +10,7 @@
   )
   (paper "A3")
   (title_block
-    (title "tutorial")
+    (title "prototype")
     (date "2024-12-02")
     (rev "v1.0.0")
     (company "Unknown")
@@ -3460,9 +3460,9 @@
 
     (footprint "ceoloide:battery_connector_jst_ph_2"
         (layer "F.Cu")
-        (at 200.1205399 106.39128249999999 60)
+        (at 208.1 89.5 90)
         (property "Reference" "JST1"
-            (at 0 4.8 60)
+            (at 0 4.8 90)
             (layer "F.SilkS")
             hide
             (effects (font (size 1 1) (thickness 0.15)))
@@ -3520,9 +3520,9 @@
         (fp_line (start 2.14 6.36) (end 3.06 6.36) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
         (fp_line (start 3.06 6.36) (end 3.06 5.36) (stroke (width 0.12) (type solid)) (layer "B.SilkS"))
         
-        (pad "11" thru_hole oval (at -1 0 60) (size 1.2 1.75) (drill 0.75) (layers "*.Cu" "*.Mask") (net 73 "JST1_1"))
-        (pad "12" thru_hole oval (at 1 0 60) (size 1.2 1.75) (drill 0.75) (layers "*.Cu" "*.Mask") (net 74 "JST1_2"))
-        (pad "21" smd custom (at -1 1.8 240) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "11" thru_hole oval (at -1 0 90) (size 1.2 1.75) (drill 0.75) (layers "*.Cu" "*.Mask") (net 73 "JST1_1"))
+        (pad "12" thru_hole oval (at 1 0 90) (size 1.2 1.75) (drill 0.75) (layers "*.Cu" "*.Mask") (net 74 "JST1_2"))
+        (pad "21" smd custom (at -1 1.8 270) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3540,7 +3540,7 @@
             )
             (net 73 "JST1_1")
         )
-        (pad "31" smd custom (at -1 1.8 240) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "31" smd custom (at -1 1.8 270) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3558,7 +3558,7 @@
             )
             (net 73 "JST1_1")
         )
-        (pad "22" smd custom (at 1 1.8 240) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "22" smd custom (at 1 1.8 270) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3576,7 +3576,7 @@
             )
             (net 74 "JST1_2")
         )
-        (pad "32" smd custom (at 1 1.8 240) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "32" smd custom (at 1 1.8 270) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3594,7 +3594,7 @@
             )
             (net 74 "JST1_2")
         )
-        (pad "1" smd custom (at -1 2.816 240) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") (net 72 "BAT_P")
+        (pad "1" smd custom (at -1 2.816 270) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") (net 72 "BAT_P")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3611,7 +3611,7 @@
                 )
             )
         )
-        (pad "1" smd custom (at 1 2.816 240) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") (net 72 "BAT_P")
+        (pad "1" smd custom (at 1 2.816 270) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") (net 72 "BAT_P")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3628,7 +3628,7 @@
                 )
             )
         )
-        (pad "2" smd custom (at -1 2.816 240) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") (net 3 "GND")
+        (pad "2" smd custom (at -1 2.816 270) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") (net 3 "GND")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3645,7 +3645,7 @@
                 )
             )
         )
-        (pad "2" smd custom (at 1 2.816 240) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") (net 3 "GND")
+        (pad "2" smd custom (at 1 2.816 270) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") (net 3 "GND")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -3665,17 +3665,17 @@
         
     )
          
-    (segment (start 201.17938560000002 108.15730789999999) (end 199.6205399 107.25730789999999) (width 0.25) (layer "F.Cu") (net 73))
-    (segment (start 201.17938560000002 108.15730789999999) (end 199.6205399 107.25730789999999) (width 0.25) (layer "B.Cu") (net 73))
-    (segment (start 202.17938560000002 106.42525709999998) (end 200.6205399 105.52525709999999) (width 0.25) (layer "F.Cu") (net 74))
-    (segment (start 202.17938560000002 106.42525709999998) (end 200.6205399 105.52525709999999) (width 0.25) (layer "B.Cu") (net 74))
+    (segment (start 209.9 90.5) (end 208.1 90.5) (width 0.25) (layer "F.Cu") (net 73))
+    (segment (start 209.9 90.5) (end 208.1 90.5) (width 0.25) (layer "B.Cu") (net 73))
+    (segment (start 209.9 88.5) (end 208.1 88.5) (width 0.25) (layer "F.Cu") (net 74))
+    (segment (start 209.9 88.5) (end 208.1 88.5) (width 0.25) (layer "B.Cu") (net 74))
         
 
   (footprint "ceoloide:power_switch_smd_side"
     (layer "F.Cu")
-    (at 219.9948955 99.96788869999999 -30)
+    (at 223.5 85.5 0)
     (property "Reference" "PWR1"
-      (at -3.6 0 -120)
+      (at -3.6 0 -90)
       (layer "F.SilkS")
       hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3692,18 +3692,18 @@
     (fp_line (start 2.845 1.2) (end 2.845 0.35) (layer "F.Fab") (stroke (width 0.1) (type solid)))
     (fp_line (start 2.645 1.4) (end 2.845 1.2) (layer "F.Fab") (stroke (width 0.1) (type solid)))
     (fp_line (start 1.345 1.4) (end 2.645 1.4) (layer "F.Fab") (stroke (width 0.1) (type solid)))
-    (pad "" smd rect (at 1.125 -3.65 60) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "" smd rect (at -1.085 -3.65 60) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "" smd rect (at -1.085 3.65 60) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "" smd rect (at 1.125 3.65 60) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
-    (pad "1" smd rect (at -1.735 2.25 60) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") )
-    (pad "2" smd rect (at -1.735 -0.75 60) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (net 34 "RAW"))
-    (pad "3" smd rect (at -1.735 -2.25 60) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (net 72 "BAT_P"))
+    (pad "" smd rect (at 1.125 -3.65 90) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
+    (pad "" smd rect (at -1.085 -3.65 90) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
+    (pad "" smd rect (at -1.085 3.65 90) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
+    (pad "" smd rect (at 1.125 3.65 90) (size 1 0.8) (layers "F.Cu" "F.Paste" "F.Mask"))
+    (pad "1" smd rect (at -1.735 2.25 90) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") )
+    (pad "2" smd rect (at -1.735 -0.75 90) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (net 34 "RAW"))
+    (pad "3" smd rect (at -1.735 -2.25 90) (size 0.7 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (net 72 "BAT_P"))
     
-    (fp_text user "ON" (at 0 -5 -30) (layer "F.SilkS")
+    (fp_text user "ON" (at 0 -5 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text user "OFF" (at 0 5 -30) (layer "F.SilkS")
+    (fp_text user "OFF" (at 0 5 0) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 0.415 -3.45) (end -0.375 -3.45) (layer "F.SilkS") (stroke (width 0.12) (type solid)))
@@ -3722,21 +3722,21 @@
     (fp_line (start 1.295 -3.35) (end 1.295 3.35) (layer "B.Fab") (stroke (width 0.1) (type solid)))
     (fp_line (start 1.295 3.35) (end -1.305 3.35) (layer "B.Fab") (stroke (width 0.1) (type solid)))
     (fp_line (start -1.305 -3.35) (end 1.295 -3.35) (layer "B.Fab") (stroke (width 0.1) (type solid)))
-    (pad "" smd rect (at -1.085 -3.65 240) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
-    (pad "" smd rect (at 1.125 -3.65 240) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
-    (pad "" smd rect (at -1.085 3.65 240) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
-    (pad "" smd rect (at 1.125 3.65 240) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
-    (pad "1" smd rect (at -1.735 -2.25 240) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") (net 72 "BAT_P"))
-    (pad "2" smd rect (at -1.735 0.75 240) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") (net 34 "RAW"))
-    (pad "3" smd rect (at -1.735 2.25 240) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") )
+    (pad "" smd rect (at -1.085 -3.65 270) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
+    (pad "" smd rect (at 1.125 -3.65 270) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
+    (pad "" smd rect (at -1.085 3.65 270) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
+    (pad "" smd rect (at 1.125 3.65 270) (size 1 0.8) (layers "B.Cu" "B.Paste" "B.Mask"))
+    (pad "1" smd rect (at -1.735 -2.25 270) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") (net 72 "BAT_P"))
+    (pad "2" smd rect (at -1.735 0.75 270) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") (net 34 "RAW"))
+    (pad "3" smd rect (at -1.735 2.25 270) (size 0.7 1.5) (layers "B.Cu" "B.Paste" "B.Mask") )
     
-    (fp_text user "PWR1" (at -3.5 0 60) (layer "B.SilkS") hide
+    (fp_text user "PWR1" (at -3.5 0 90) (layer "B.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
-    (fp_text user "ON" (at 0 -5 -30) (layer "B.SilkS")
+    (fp_text user "ON" (at 0 -5 0) (layer "B.SilkS")
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
-    (fp_text user "OFF" (at 0 5 -30) (layer "B.SilkS")
+    (fp_text user "OFF" (at 0 5 0) (layer "B.SilkS")
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_line (start -1.425 1.4) (end -1.425 1.6) (layer "B.SilkS") (stroke (width 0.12) (type solid)))
@@ -3745,14 +3745,14 @@
     (fp_line (start -1.425 -1.6) (end -1.425 0.1) (layer "B.SilkS") (stroke (width 0.12) (type solid)))
     (fp_line (start 1.425 -2.85) (end 1.425 2.85) (layer "B.SilkS") (stroke (width 0.12) (type solid)))
     
-    (pad "" np_thru_hole circle (at 0.025 -1.5 60) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
-    (pad "" np_thru_hole circle (at 0.025 1.5 60) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "" np_thru_hole circle (at 0.025 -1.5 90) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
+    (pad "" np_thru_hole circle (at 0.025 1.5 90) (size 0.9 0.9) (drill 0.9) (layers "*.Cu" "*.Mask"))
   )
     
 
   (module "ceoloide:reset_switch_tht_top"
     (layer F.Cu)
-    (at 215.1 83.5 0)
+    (at 215.1 80.5 0)
     (property "Reference" "RST1"
       (at 0 2.55 90)
       (layer "F.SilkS")
@@ -3780,8 +3780,116 @@
     (pad "1" thru_hole circle (at 3.25 0 0) (size 2 2) (drill 1.3) (layers "*.Cu" "*.Mask") (net 35 "RST"))
   )
         
-  (gr_line (start 225.6 92.99161396006753) (end 225.6 45) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 225.6 45) (mid 225.30710679999999 44.2928932) (end 224.6 44) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 109.5 90.5 0)
+    (property "Reference" "MH1"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 109.5 71.5 0)
+    (property "Reference" "MH2"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 186.5 82 0)
+    (property "Reference" "MH3"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 186.5 63 0)
+    (property "Reference" "MH4"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 200.7873638 130.7363096 -30)
+    (property "Reference" "MH5"
+      (at 0 2.55 -30)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 -30)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+
+  (footprint "ceoloide:mounting_hole_npth"
+    (layer "F.Cu")
+    (at 147.5 85.5 0)
+    (property "Reference" "MH6"
+      (at 0 2.55 0)
+      (layer "F.SilkS")
+      hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad "" np_thru_hole circle
+      (at 0 0 0)
+      (size 2.2 2.2)
+      (drill 2.2)
+      (layers "*.Cu" "*.Mask")
+    )
+  )
+  
+  (gr_line (start 225.6 92.99161396006753) (end 225.6 44.99999996006753) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 225.6 44.99999996006753) (mid 225.30710679999999 44.29289316006753) (end 224.6 43.99999996006753) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 186.5 44) (end 224.6 44) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 186.5 44) (end 186.5 42.5) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 186.5 42.5) (mid 186.2071068 41.7928932) (end 185.5 41.5) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
