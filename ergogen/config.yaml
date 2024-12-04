@@ -229,3 +229,22 @@ pcbs:
       screws:
         what: ceoloide/mounting_hole_npth
         where: /screw/
+
+      jlcpcb_order_number_text:
+        what: ceoloide/utility_text
+        where: mcu
+        params:
+          text: "JLCJLCJLCJLCJLCJLC"
+          reversible : true
+        adjust:
+          rotate: 90
+          shift: [ 0, -6 ]
+
+      ergogen_logo:
+        what: ceoloide/utility_ergogen_logo
+        where: matrix_middle_bottom
+        params:
+          scale: 2.5
+          reversible: true
+        adjust:
+          shift: [ 0, -1u ]
