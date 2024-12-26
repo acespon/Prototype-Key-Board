@@ -137,6 +137,11 @@ outlines:
       name: _keys
       operation: subtract
 
+cases:
+  case:
+    - name: baseplate
+      extrude: 1
+
 pcbs:
   prototype:
     template: kicad8
